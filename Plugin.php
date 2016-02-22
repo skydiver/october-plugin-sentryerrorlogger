@@ -53,6 +53,21 @@
                         ]
                     ],
 
+                    'sentry_level' => [
+                        'tab'      => 'martin.sentryerrorlogger::lang.tab.name',
+                        'label'    => 'martin.sentryerrorlogger::lang.fields.sentry_level.label',
+                        'required' => true,
+                        'type'     => 'dropdown',
+                        'options'  => \VojtaSvoboda\ErrorLogger\Models\Settings::getErrorLevelOptions(),
+                        'trigger'  => [
+                            'action'    => 'show',
+                            'field'     => 'sentry_enabled',
+                            'condition' => 'checked'
+                        ]
+                    ],
+
+
+
                 ]);
 
             });
@@ -67,8 +82,9 @@
                 return $monolog;
             }
 
-            $dsn     = Settings::get('sentry_dsn');
-            $handler = new RavenHandler(new Raven_Client($dsn));
+            $dsn     = Settings::get('sentry_dsn'  , null);
+            $level   = Settings::get('sentry_level', 100);
+            $handler = new RavenHandler(new Raven_Client($dsn), $level);
 
             $monolog->pushHandler($handler);
 

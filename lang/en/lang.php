@@ -19,6 +19,10 @@
             'sentry_dsn' => [
                 'label' => 'Sentry DSN'
             ],
+            'sentry_level' => [
+                'label' => 'Logging level',
+                'comment' => 'The minimum logging level at which this handler will be triggered'
+            ],
         ],
 
 
