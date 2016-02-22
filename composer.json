@@ -1,0 +1,6 @@
+{
+    "name": "martin/sentryerrorlogger",
+    "require": {
+        "raven/raven": "dev-master"
+    }
+}

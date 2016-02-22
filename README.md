@@ -1,0 +1,1 @@
+##Sentry support for Error Logger plugin
