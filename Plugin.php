@@ -17,9 +17,9 @@
             return [
                 'name'        => 'martin.sentryerrorlogger::lang.plugin.name',
                 'description' => 'martin.sentryerrorlogger::lang.plugin.description',
-                'author'      => 'martin.sentryerrorlogger::lang.plugin.author',
+                'author'      => 'Martin M.',
                 'icon'        => 'icon-bug',
-                'homepage'    => 'https://octobercms.com/author/Martin'
+                'homepage'    => 'https://github.com/skydiver/'
             ];
         }
 

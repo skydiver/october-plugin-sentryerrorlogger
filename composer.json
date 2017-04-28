@@ -1,6 +1,10 @@
 {
-    "name": "martin/sentryerrorlogger",
+    "name": "martin/sentryerrorlogger-plugin",
+    "type": "october-plugin",
+    "description": "Sentry support for OctoberCMS",
+    "homepage": "https://github.com/skydiver/october-plugin-sentryerrorlogger",
+    "keywords": ["october", "cms", "sentry", "error", "logger"],
     "require": {
-        "raven/raven": "dev-master"
+        "sentry/sentry-laravel": "^0.7.0"
     }
 }

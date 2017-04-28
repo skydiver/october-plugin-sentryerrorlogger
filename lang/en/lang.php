@@ -5,7 +5,6 @@
         'plugin' => [
             'name'        => 'Sentry support for Error Logger',
             'description' => 'Extend Error Logger to support Sentry',
-            'author'      => 'Martin M.'
         ],
 
         'tab' => [
@@ -20,7 +19,7 @@
                 'label' => 'Sentry DSN'
             ],
             'sentry_level' => [
-                'label' => 'Logging level',
+                'label'   => 'Logging level',
                 'comment' => 'The minimum logging level at which this handler will be triggered'
             ],
         ],
