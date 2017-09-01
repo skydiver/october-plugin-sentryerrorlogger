@@ -1,3 +1,4 @@
 1.0.0: First version of Sentry support for Error Logger
 1.0.1: Added logging level option
 1.1.0: Upgraded to "sentry/sentry-laravel" package
+1.1.1: Fix for October build 420
