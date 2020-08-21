@@ -28,6 +28,11 @@
             $monolog = Log::getMonolog();
             $this->setSentryHandler($monolog);
 
+            \VojtaSvoboda\ErrorLogger\Models\Settings::extend(function ($model) {
+                $model->rules['sentry_dsn'] = 'required_if:sentry_enabled,1';
+                $model->rules['sentry_level'] = 'required_if:sentry_enabled,1';
+            });
+
             \Event::listen('backend.form.extendFields', function($widget) {
 
                 if(!$widget->model instanceof \VojtaSvoboda\ErrorLogger\Models\Settings) {
@@ -39,34 +44,30 @@
                     'sentry_enabled' => [
                         'tab'     => 'martin.sentryerrorlogger::lang.tab.name',
                         'label'   => 'martin.sentryerrorlogger::lang.fields.sentry_enabled.label',
-                        'type'    => 'switch'
+                        'type'    => 'switch',
                     ],
 
                     'sentry_dsn' => [
                         'tab'      => 'martin.sentryerrorlogger::lang.tab.name',
                         'label'    => 'martin.sentryerrorlogger::lang.fields.sentry_dsn.label',
-                        'required' => true,
                         'trigger'  => [
                             'action'    => 'show',
                             'field'     => 'sentry_enabled',
-                            'condition' => 'checked'
-                        ]
+                            'condition' => 'checked',
+                        ],
                     ],
 
                     'sentry_level' => [
                         'tab'      => 'martin.sentryerrorlogger::lang.tab.name',
                         'label'    => 'martin.sentryerrorlogger::lang.fields.sentry_level.label',
-                        'required' => true,
                         'type'     => 'dropdown',
                         'options'  => \VojtaSvoboda\ErrorLogger\Models\Settings::getErrorLevelOptions(),
                         'trigger'  => [
                             'action'    => 'show',
                             'field'     => 'sentry_enabled',
-                            'condition' => 'checked'
-                        ]
+                            'condition' => 'checked',
+                        ],
                     ],
-
-
 
                 ]);
 
