@@ -5,6 +5,8 @@
     "homepage": "https://github.com/skydiver/october-plugin-sentryerrorlogger",
     "keywords": ["october", "cms", "sentry", "error", "logger"],
     "require": {
-        "sentry/sentry-laravel": "^2.5.3"
+        "sentry/sentry-laravel": "^2.5.3",
+        "illuminate/contracts" : "6.20.*",
+        "illuminate/support" : "6.20.*"
     }
 }
