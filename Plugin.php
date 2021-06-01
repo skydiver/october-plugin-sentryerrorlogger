@@ -1,6 +1,6 @@
 <?php
 
-    namespace KosmosKosmos\SentryErrorLogger;
+    namespace Martin\SentryErrorLogger;
 
     use System\Classes\PluginBase;
     use VojtaSvoboda\ErrorLogger\Models\Settings;
